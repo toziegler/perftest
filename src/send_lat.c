@@ -164,7 +164,7 @@ static int send_destroy_ctx(struct pingpong_context *ctx,
 int main(int argc, char *argv[])
 {
 	int                        i = 0, rc;
-	int                        size_max_pow = 16;
+	int                        size_max_pow = 17;
 	int			   ret_val;
 	struct report_options      report;
 	struct pingpong_context    ctx;
