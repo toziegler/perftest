@@ -1318,8 +1318,8 @@ int establish_connection(struct perftest_comm *comm)
 			}
 		}
 	} else {
-		ptr = comm->rdma_params->servername ? &ethernet_client_connect : &ethernet_server_connect;
-
+       fprintf(stderr,"Normal connection without CM");
+       ptr = comm->rdma_params->servername ? &ethernet_client_connect : &ethernet_server_connect;
 		if ((*ptr)(comm)) {
 			fprintf(stderr,"Unable to open file descriptor for socket connection");
 			return 1;
