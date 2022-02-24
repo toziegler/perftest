@@ -902,6 +902,7 @@ int set_up_connection(struct pingpong_context *ctx,
 int rdma_client_connect(struct pingpong_context *ctx,struct perftest_parameters *user_param)
 {
 
+   fprintf(stderr, "Connecting via cm ");
    raise(4);
    char *service;
    int temp,num_of_retry= NUM_OF_RETRIES;
