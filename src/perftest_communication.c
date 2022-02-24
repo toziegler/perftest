@@ -903,7 +903,8 @@ int rdma_client_connect(struct pingpong_context *ctx,struct perftest_parameters 
 {
 
    fprintf(stderr, "Connecting via cm ");
-   raise(4);
+   exit(1);
+   
    char *service;
    int temp,num_of_retry= NUM_OF_RETRIES;
    struct sockaddr_in sin, source_sin;
