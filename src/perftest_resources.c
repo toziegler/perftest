@@ -539,7 +539,8 @@ static inline int _new_post_send(struct pingpong_context *ctx,
 				wr->wr.ud.remote_qpn,
 				wr->wr.ud.remote_qkey);
 		} else if (qpt == IBV_QPT_DRIVER && connection_type == SRD) {
-			ibv_wr_set_ud_addr(
+           // XXX: I assume here the wr addr is set this must be called after the send for every op?
+           ibv_wr_set_ud_addr(
 				ctx->qpx[index],
 				ctx->ah[index],
 				ctx->rem_qpn[index],
@@ -2525,6 +2526,7 @@ static int ctx_modify_qp_to_rts(struct ibv_qp *qp,
 /******************************************************************************
  *
  ******************************************************************************/
+// XXX: function to look at 
 int ctx_connect(struct pingpong_context *ctx,
 		struct pingpong_dest *dest,
 		struct perftest_parameters *user_param,

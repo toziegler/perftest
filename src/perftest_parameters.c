@@ -1522,7 +1522,9 @@ static void force_dependecies(struct perftest_parameters *user_param)
 			fprintf(stderr, " SRD does not support events\n");
 			exit(1);
 		}
+        // XXX: does this overwritte the cq mode user input 
 		user_param->cq_mod = 1;
+        
 	}
 
 	#ifndef HAVE_RSS_EXP
