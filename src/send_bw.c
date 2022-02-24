@@ -165,6 +165,8 @@ int main(int argc, char *argv[])
 	int                      	ret_parser, i = 0, rc;
 	int                      	size_max_pow = 17;
 
+    
+        
 	/* init default values to user's parameters */
 	memset(&ctx, 0,sizeof(struct pingpong_context));
 	memset(&user_param, 0 , sizeof(struct perftest_parameters));
@@ -178,7 +180,7 @@ int main(int argc, char *argv[])
 	/* Configure the parameters values according to user arguments or defalut values. */
 	ret_parser = parser(&user_param,argv,argc);
 	if (ret_parser) {
-		if (ret_parser != VERSION_EXIT && ret_parser != HELP_EXIT)
+ 		if (ret_parser != VERSION_EXIT && ret_parser != HELP_EXIT)
 			fprintf(stderr," Parser function exited with Error\n");
 		return FAILURE;
 	}

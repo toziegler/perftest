@@ -901,14 +901,16 @@ int set_up_connection(struct pingpong_context *ctx,
  ******************************************************************************/
 int rdma_client_connect(struct pingpong_context *ctx,struct perftest_parameters *user_param)
 {
-	char *service;
-	int temp,num_of_retry= NUM_OF_RETRIES;
-	struct sockaddr_in sin, source_sin;
-	struct sockaddr *source_ptr = NULL;
-	struct addrinfo *res;
-	struct rdma_cm_event *event;
-	struct rdma_conn_param conn_param;
-	struct addrinfo hints;
+
+   raise(4);
+   char *service;
+   int temp,num_of_retry= NUM_OF_RETRIES;
+   struct sockaddr_in sin, source_sin;
+   struct sockaddr *source_ptr = NULL;
+   struct addrinfo *res;
+   struct rdma_cm_event *event;
+   struct rdma_conn_param conn_param;
+   struct addrinfo hints;
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family   = AF_INET;
